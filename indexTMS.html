@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnostic TMS Express | Service Ergonomie Industrielle – Maroc</title>
+<meta name="description" content="Diagnostic ergonomique TMS quantifié en 14 jours, avec 3 actions chiffrées. Ergonomie industrielle, interventions partout au Maroc.">
+<meta name="theme-color" content="#0B1F3A">
+<style>
+:root{
+  --navy:#0B1F3A;
+  --navy-2:#16345C;
+  --orange:#D4611A;
+  --orange-dark:#B84F0F;
+  --bg:#FFFFFF;
+  --gray:#F3F5F8;
+  --line:#D9DEE6;
+  --ink:#1B2430;
+  --muted:#556070;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-size:17px;
+  line-height:1.55;
+  color:var(--ink);
+  background:var(--bg);
+  padding-bottom:88px;
+}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2,h3{color:var(--navy);line-height:1.2;margin:0 0 .5em}
+h2{font-size:clamp(1.55rem,5.2vw,2.15rem);letter-spacing:-.01em}
+h3{font-size:1.2rem}
+p{margin:0 0 1em}
+
+/* Top bar */
+.top{background:#fff;border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;padding-top:14px;padding-bottom:14px}
+.mark{width:34px;height:34px;border-radius:8px;background:var(--navy);position:relative;flex:none}
+.mark::after{content:"";position:absolute;left:8px;right:8px;bottom:8px;height:5px;border-radius:3px;background:var(--orange)}
+.brand{font-weight:800;color:var(--navy);font-size:1.02rem;line-height:1.15}
+.brand small{display:block;font-weight:600;color:var(--muted);font-size:.78rem}
+
+/* Buttons */
+.btn{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  min-height:60px;padding:14px 22px;
+  background:var(--orange);color:#fff;
+  font-weight:800;font-size:1.2rem;line-height:1.2;text-align:center;
+  text-decoration:none;border-radius:12px;
+  box-shadow:0 6px 16px rgba(11,31,58,.18);
+  transition:background .15s ease,transform .1s ease;
+}
+.btn:hover{background:var(--orange-dark)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible,summary:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px var(--navy)}
+.btn svg{width:24px;height:24px;flex:none}
+
+/* Hero */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-2) 100%);color:#fff;padding:44px 0 52px}
+.eyebrow{display:inline-block;font-weight:700;font-size:.82rem;letter-spacing:.09em;text-transform:uppercase;color:#FFB784;margin-bottom:14px}
+.hero h1{color:#fff;font-size:clamp(2.1rem,9vw,3.6rem);letter-spacing:-.02em;margin-bottom:.4em}
+.hero .sub{font-size:1.2rem;color:#D6DFEC;max-width:640px;margin-bottom:26px}
+.hero .btn{max-width:460px}
+.hero .meta{margin:18px 0 0;font-size:.92rem;color:#B9C6D9}
+
+/* Sections */
+section{padding:54px 0}
+.alt{background:var(--gray)}
+.lead{color:var(--muted);max-width:680px;font-size:1.05rem}
+.grid{display:grid;gap:16px;margin-top:24px}
+
+/* Excuses */
+.excuse{background:#fff;border:1px solid var(--line);border-left:6px solid var(--orange);border-radius:12px;padding:20px}
+.excuse h3{margin-bottom:.35em}
+.excuse p{margin:0;color:var(--ink)}
+
+/* Solution */
+.step-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}
+.tag{display:inline-block;font-weight:800;font-size:.8rem;color:var(--orange-dark);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.callout{margin-top:22px;background:var(--navy);color:#fff;border-radius:12px;padding:22px}
+.callout p{margin:0;font-size:1.05rem}
+.callout strong{color:#FFB784}
+
+/* How it works */
+.how{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:16px}
+.how li{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+.num{flex:none;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+.how h3{margin:0 0 .15em;font-size:1.1rem}
+.how p{margin:0;color:var(--muted)}
+
+/* Pricing */
+.offer{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:6px}
+.offer h3{margin:0}
+.offer .what{color:var(--muted);margin:0 0 6px}
+.price{font-size:2rem;font-weight:800;color:var(--navy);line-height:1.1}
+.price small{display:block;font-size:.95rem;font-weight:600;color:var(--muted);margin-top:4px}
+.offer .btn{margin-top:14px;font-size:1.1rem}
+.offer.best{border:3px solid var(--orange);background:#FFF8F2;position:relative;padding-top:30px}
+.badge{position:absolute;top:-15px;left:20px;background:var(--orange);color:#fff;font-weight:800;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;padding:6px 14px;border-radius:999px}
+.was{text-decoration:line-through;color:var(--muted);font-weight:600}
+.note{margin-top:16px;color:var(--muted);font-size:.92rem}
+
+/* For whom */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0;padding:0;list-style:none}
+.chips li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-weight:600;color:var(--navy)}
+.who h3{margin-top:26px;margin-bottom:0}
+
+/* FAQ */
+details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-top:12px}
+summary{cursor:pointer;list-style:none;padding:18px 20px;font-weight:700;color:var(--navy);display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.6rem;line-height:1;color:var(--orange);flex:none}
+details[open] summary::after{content:"–"}
+details p{margin:0;padding:0 20px 18px;color:var(--ink)}
+
+/* Final CTA */
+.final{background:var(--navy);color:#fff;text-align:center}
+.final h2{color:#fff;max-width:640px;margin-left:auto;margin-right:auto}
+.final .btn{max-width:460px;margin:22px auto 0}
+
+/* Footer */
+footer{background:#08162B;color:#B9C6D9;padding:30px 0;font-size:.92rem}
+footer strong{color:#fff}
+footer p{margin:0 0 6px}
+
+/* Sticky mobile CTA */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -6px 18px rgba(11,31,58,.12)}
+.sticky .btn{min-height:56px;font-size:1.1rem;box-shadow:none}
+
+@media (min-width:760px){
+  body{padding-bottom:0}
+  .sticky{display:none}
+  .hero{padding:72px 0 80px}
+  section{padding:76px 0}
+  .grid.two{grid-template-columns:repeat(2,1fr)}
+  .grid.three{grid-template-columns:repeat(3,1fr)}
+  .how{grid-template-columns:repeat(3,1fr)}
+  .how li{flex-direction:column}
+  .offers{grid-template-columns:repeat(3,1fr)}
+  .offer.best{grid-column:1 / -1;flex-direction:row;align-items:center;justify-content:space-between;gap:28px}
+  .offer.best .best-body{flex:1}
+  .offer.best .btn{margin-top:0;min-width:300px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="mark" aria-hidden="true"></div>
+    <div class="brand">Service Ergonomie Industrielle<small>Diagnostic TMS Express</small></div>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. HERO -->
+  <section class="hero" id="haut">
+    <div class="wrap">
+      <span class="eyebrow">Service Ergonomie Industrielle</span>
+      <h1>Vos postes font mal. Vos chiffres le prouvent.</h1>
+      <p class="sub">Diagnostic ergonomique TMS quantifié, en 14 jours, avec 3 actions chiffrées.</p>
+      <a class="btn" href="https://wa.me/212762670139?text=Bonjour%2C%20je%20veux%20un%20diagnostic%20TMS%20Express" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>
+        Demander un diagnostic sur WhatsApp
+      </a>
+      <p class="meta">Ergonomie Industrielle - Maroc - Interventions partout au Maroc</p>
+    </div>
+  </section>
+
+  <!-- 2. LES 2 EXCUSES -->
+  <section id="excuses">
+    <div class="wrap">
+      <h2>Deux excuses classiques. Une seule réponse.</h2>
+      <div class="grid two">
+        <article class="excuse">
+          <h3>« Pas le temps »</h3>
+          <p>TMS Express se fait en 14 jours. Rapport de 5 pages, sans immobiliser la production.</p>
+        </article>
+        <article class="excuse">
+          <h3>« Pas le budget »</h3>
+          <p>Un prix annoncé d'avance : 18 000 DH. Rapport de 5 pages, 3 actions chiffrées en coût, temps et gain, sans immobiliser la production.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. LA SOLUTION -->
+  <section class="alt" id="solution">
+    <div class="wrap">
+      <h2>On observe. On quantifie. On priorise.</h2>
+      <p class="lead">Une méthode simple, centrée sur le poste de travail réel.</p>
+      <div class="grid three">
+        <article class="step-card">
+          <span class="tag">Observer</span>
+          <h3>Le poste, en situation</h3>
+          <p>Nous observons le poste tel qu'il est utilisé, sur site.</p>
+        </article>
+        <article class="step-card">
+          <span class="tag">Quantifier</span>
+          <h3>Méthode QEC</h3>
+          <p>Nous quantifions l'exposition avec la méthode QEC (Quick Exposure Check), d'inspiration québécoise, issue de la méthode élaborée à l'Université de Surrey (Angleterre). Elle évalue le dos, l'épaule et le bras, le poignet et la main, et le cou.</p>
+        </article>
+        <article class="step-card">
+          <span class="tag">Prioriser</span>
+          <h3>3 actions chiffrées</h3>
+          <p>Nous remettons 3 actions prioritaires, chiffrées en coût, temps et gain sur les TMS.</p>
+        </article>
+      </div>
+      <div class="callout">
+        <p><strong>Le médecin du travail garde la partie médicale et l'aptitude.</strong> L'ergonome apporte la preuve technique sur le poste. Les deux approches se complètent.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. COMMENT ÇA MARCHE -->
+  <section id="etapes">
+    <div class="wrap">
+      <h2>Comment ça marche</h2>
+      <ol class="how">
+        <li>
+          <span class="num">1</span>
+          <div><h3>Message WhatsApp, 15 min</h3><p>Un échange court pour cadrer le poste ou la ligne concernée.</p></div>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <div><h3>Diagnostic sur site, 14 jours</h3><p>Observation et quantification sur le poste.</p></div>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <div><h3>Rapport 5 pages + 3 actions</h3><p>Un document utilisable tout de suite, avec 3 actions chiffrées.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5. OFFRES / PRIX -->
+  <section class="alt" id="offres">
+    <div class="wrap">
+      <h2>Les offres</h2>
+      <p class="lead">Des prix annoncés, en dirhams. Choisissez ce qui correspond à votre besoin.</p>
+      <div class="grid offers">
+
+        <article class="offer best">
+          <span class="badge">Meilleur choix</span>
+          <div class="best-body">
+            <h3>Pack QEC + TMS Express</h3>
+            <p class="what">QEC Intra + TMS Express : former l'équipe et diagnostiquer le poste.</p>
+            <div class="price">28 000 DH<small>au lieu de <span class="was">30 000 DH</span></small></div>
+          </div>
+          <a class="btn" href="https://wa.me/212762670139?text=Bonjour%2C%20je%20veux%20un%20diagnostic%20TMS%20Express" target="_blank" rel="noopener">Demander sur WhatsApp</a>
+        </article>
+
+        <article class="offer">
+          <h3>QEC Inter</h3>
+          <p class="what">Formation quantification des postes.</p>
+          <div class="price">1 900 DH<small>par personne</small></div>
+          <a class="btn" href="https://wa.me/212762670139?text=Bonjour%2C%20je%20veux%20un%20diagnostic%20TMS%20Express" target="_blank" rel="noopener">Demander sur WhatsApp</a>
+        </article>
+
+        <article class="offer">
+          <h3>QEC Intra</h3>
+          <p class="what">En entreprise.</p>
+          <div class="price">12 000 DH<small>pour 8 personnes</small></div>
+          <a class="btn" href="https://wa.me/212762670139?text=Bonjour%2C%20je%20veux%20un%20diagnostic%20TMS%20Express" target="_blank" rel="noopener">Demander sur WhatsApp</a>
+        </article>
+
+        <article class="offer">
+          <h3>TMS Express</h3>
+          <p class="what">Diagnostic entreprise, 14 jours.</p>
+          <div class="price">18 000 DH<small>rapport 5 pages, 3 actions chiffrées</small></div>
+          <a class="btn" href="https://wa.me/212762670139?text=Bonjour%2C%20je%20veux%20un%20diagnostic%20TMS%20Express" target="_blank" rel="noopener">Demander sur WhatsApp</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. POUR QUI -->
+  <section class="who" id="pour-qui">
+    <div class="wrap">
+      <h2>Pour qui</h2>
+      <ul class="chips">
+        <li>Industrie</li>
+        <li>Mines</li>
+        <li>Maintenance</li>
+        <li>Manutention</li>
+        <li>Ateliers</li>
+        <li>Logistique</li>
+      </ul>
+      <h3>Villes</h3>
+      <ul class="chips">
+        <li>El Jadida</li>
+        <li>Jorf Lasfar</li>
+        <li>Casablanca</li>
+        <li>Kenitra</li>
+        <li>Rabat</li>
+        <li>Tanger</li>
+        <li>Agadir</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 7. FAQ -->
+  <section class="alt" id="faq">
+    <div class="wrap">
+      <h2>Questions fréquentes</h2>
+      <details>
+        <summary>Remplacez-vous le médecin du travail ?</summary>
+        <p>Non. Le médecin du travail garde la partie médicale et l'aptitude. Le service apporte la preuve technique sur le poste.</p>
+      </details>
+      <details>
+        <summary>Combien de temps ça prend ?</summary>
+        <p>14 jours.</p>
+      </details>
+      <details>
+        <summary>Que contient le rapport ?</summary>
+        <p>5 pages et 3 actions prioritaires chiffrées.</p>
+      </details>
+      <details>
+        <summary>Vous vous déplacez partout au Maroc ?</summary>
+        <p>Oui.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 8. CTA FINAL -->
+  <section class="final" id="contact">
+    <div class="wrap">
+      <h2>Un poste qui fait mal coûte plus cher qu'un diagnostic.</h2>
+      <a class="btn" href="https://wa.me/212762670139?text=Bonjour%2C%20je%20veux%20un%20diagnostic%20TMS%20Express" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20.5l1.7-5.3A8.4 8.4 0 1 1 21 11.5z"/></svg>
+        Demander un diagnostic sur WhatsApp
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Service Ergonomie Industrielle</strong> · Diagnostic TMS Express</p>
+    <p>Ergonomie Industrielle - Maroc - Interventions partout au Maroc</p>
+    <p>QEC (Quick Exposure Check) : méthode élaborée par G. Li et P. Buckle, University of Surrey. Les niveaux de risque sont indicatifs et n'ont pas été établis par règlement.</p>
+    <p>© 2026</p>
+  </div>
+</footer>
+
+<!-- Barre WhatsApp fixe (mobile) -->
+<div class="sticky">
+  <a class="btn" href="https://wa.me/212762670139?text=Bonjour%2C%20je%20veux%20un%20diagnostic%20TMS%20Express" target="_blank" rel="noopener">Demander un diagnostic sur WhatsApp</a>
+</div>
+
+</body>
+</html>
